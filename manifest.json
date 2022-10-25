@@ -3,6 +3,7 @@
     "short_name": "Jeppe",
     "start_url": "./index.html",
     "display": "standalone",
+    "orientation": "natural",
     "background_color": "#fff",
     "scope": "/",
     "description": "This is Jeppe's app",
