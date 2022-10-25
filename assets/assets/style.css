@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-body {
-  overflow: hidden;
-  height: 100%;
-}
 body .slides {
   margin: 5rem;
   padding: 5rem;

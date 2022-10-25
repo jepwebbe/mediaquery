@@ -3,22 +3,17 @@
 }
 
 body {
-    overflow: hidden;
-    height: 100%;
-
     .slides {
         margin: 5rem;
         padding: 5rem;
         border: 1px solid black;
         display: flex;
         gap: 1rem;
-
         img {
             max-width: 100%;
             height: auto;
         }
     }
-
     nav {
         display: none;
     }
