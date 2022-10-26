@@ -2,12 +2,19 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
 body .slides {
   margin: 5rem;
   padding: 5rem;
   border: 1px solid black;
   display: flex;
   gap: 1rem;
+}
+body .slides h2 {
+  margin-top: 0;
+  font-size: 2rem;
 }
 body .slides img {
   max-width: 100%;
@@ -18,38 +25,47 @@ body nav {
 }
 
 @media (max-width: 600px) {
-  .slider {
+  body .slider {
     overflow: hidden;
     max-width: 500px;
     height: 100%;
     margin: 0 auto;
   }
-  .slider .slides {
+  body .slider .slides {
     display: flex;
     margin: unset;
     padding: unset;
     border: unset;
     overflow: hidden;
   }
-  .slider .slides section {
+  body .slider .slides section {
     flex-shrink: 0;
     width: 100%;
     height: 90vh;
     margin-right: 50px;
     border-radius: 10px;
   }
-  .slider nav {
+  body nav {
     display: block;
+    position: fixed;
+    bottom: 0;
+    background-color: #8e0e99;
+    width: 100%;
+    height: 5rem;
   }
-  .slider nav ul {
-    display: flex;
+  body nav ul {
     list-style-type: none;
+    height: 100%;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0;
     padding: 0;
   }
-  .slider nav ul a {
+  body nav ul a {
     text-decoration: none;
     margin: 0 2rem;
+    color: white;
+    font-size: 2rem;
   }
 }/*# sourceMappingURL=style.css.map */
