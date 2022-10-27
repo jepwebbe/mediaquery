@@ -35,14 +35,12 @@ body {
             height: 100%;
             margin: 0 auto;
 
-
             .slides {
                 display: flex;
                 margin: unset;
                 padding: unset;
                 border: unset;
                 overflow: hidden;
-
 
                 section {
                     flex-shrink: 0;
@@ -77,7 +75,7 @@ body {
                     margin: 0 2rem;
                     color: white;
                     font-size: 2rem;
-                }
+                }  
             }
         }
     }
