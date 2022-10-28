@@ -1,32 +1,30 @@
 const cacheVersionName = ['staticCache-v1']
 
-
+// tilføj eventlistener og fetch
 self.addEventListener('fetch', (event) => {
-    // Check if this is a request for an image
-   
-      event.respondWith(caches.open(cacheVersionName).then((response) => {
-        // Goes first to the cache
-        return response.match(event.request.url).then((cachedResponse) => {
-          // If there is a cache, it returns the cache
-          if (cachedResponse) {
-            console.log("cached response" + cachedResponse)
 
-            return cachedResponse;
-          }
-  
-          // If not cached response, it goes to web
-          return fetch(event.request).then((fetchedResponse) => {
-            // Add the network response to the cache for later visits
-            response.put(event.request, fetchedResponse.clone());
-        
-            // Return the network response
-            console.log("fetched response" + fetchedResponse)
-            return fetchedResponse;
-          });
-        });
-      }));
-     
-  });
+  event.respondWith(caches.open(cacheVersionName).then((response) => {
+    // Først gå til cachen
+    return response.match(event.request.url).then((cachedResponse) => {
+      // Hvis der er et noget i cachen, returner det
+      if (cachedResponse) {
+        console.log("cached response" + cachedResponse)
+
+        return cachedResponse;
+      }
+
+      // Hvis der ikke er et cached response, gå til netværket
+      return fetch(event.request).then((fetchedResponse) => {
+        // Tilføj fetched response til cahce for senere besøg
+        response.put(event.request, fetchedResponse.clone());
+
+        // Returner netrespons
+        console.log("fetched response" + fetchedResponse)
+        return fetchedResponse;
+      });
+    });
+  }));
+});
 
                     // PRECACHING
 /* 
